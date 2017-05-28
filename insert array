@@ -1,0 +1,40 @@
+public void Test(){
+		int[] scores1=new int[6];
+		
+		scores1[0]=90;
+		scores1[1]=87;
+		scores1[2]=76;
+		scores1[3]=65;
+		scores1[4]=56;
+		System.out.println("第一次输出："+Arrays.toString(scores1));
+		
+		int index=scores1.length;//插入位置
+		Scanner input=new Scanner(System.in);
+		int num=input.nextInt();
+		//循环比较
+		for (int i = 0; i < scores1.length; i++) {
+			if(num>scores1[i]){
+				index=i;
+				break;
+			}
+		}
+		//元素后移
+		/*scores1[5]=scores1[4];
+		System.out.println("第二次输出："+Arrays.toString(scores1));
+		scores1[4]=scores1[3];
+		System.out.println("第三次输出："+Arrays.toString(scores1));
+		scores1[3]=scores1[2];
+		System.out.println("第四次输出："+Arrays.toString(scores1));
+		scores1[2]=scores1[1];
+		System.out.println("第五次输出："+Arrays.toString(scores1));*/
+		
+		for(int i=scores1.length-1;i>index+1;i--){
+			scores1[i]=scores1[i-1];
+			System.out.println("第"+i+"次输出："+Arrays.toString(scores1));
+			
+		}
+		scores1[index]=num;
+		for (int i = 0; i < scores1.length; i++) {
+			System.out.println(scores1[i]);
+		}
+	}
